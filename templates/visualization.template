@@ -6,5 +6,4 @@ name = Visualization
 schedule = {"all":"continuous"}
 
 [kibana]
-Cmd = ""
-HostConfig = {"PortBindings": { "5601/http": [{ "HostPort": "5601" }]}, "Links": ["core-elasticsearch:elasticsearch"]}
+HostConfig = {"LogConfig":{"Type": "syslog", "Config": {"syslog-address":"tcp://localhost"}}, "Links": ["core-elasticsearch:elasticsearch"], "PublishAllPorts": true}
